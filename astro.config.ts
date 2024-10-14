@@ -31,6 +31,10 @@ export default defineConfig({
 					label: "日本語",
 					lang: "ja",
 				},
+				ko: {
+					label: "한국어",
+					lang: "ko",
+				},
 				"zh-cn": {
 					label: "简体中文",
 					lang: "zh-CN",
