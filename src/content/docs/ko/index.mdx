@@ -2,17 +2,17 @@
 title: Biome
 head:
   - tag: title
-    content: Biome, toolchain of the web
+    content: 웹을 위한 툴체인, Biome
 template: splash
-description: Format, lint, and more in a fraction of a second.
+description: 포매팅, 린팅 등을 순식간에 처리합니다.
 editUrl: false
 next: false
 
 hero:
-  title: One toolchain for your web project
-  tagline: Format, lint, and more in a fraction of a second.
+  title: 웹 프로젝트를 위한 하나의 툴체인
+  tagline: 포매팅, 린팅 등을 순식간에 처리합니다.
   image:
-    alt: Biome, Toolchain of the web
+    alt: 웹을 위한 툴체인, Biome
     dark: "@/assets/svg/slogan-dark-transparent.svg"
     light: "@/assets/svg/slogan-light-transparent.svg"
   actions:
@@ -47,23 +47,23 @@ import NumberOfRules from "@/components/generated/NumberOfRules.astro";
 
 
 <div class="hero-code">
-    <h2 class="head">Format code like Prettier, save time</h2>
+    <h2 class="head">Prettier 같은 코드 포매팅, 하지만 시간을 절약하는</h2>
 
-    **Biome is a [fast formatter](https://github.com/biomejs/biome/tree/main/benchmark#formatting)** for _JavaScript_, _TypeScript_, _JSX_, _TSX_, _JSON_, _CSS_ and _GraphQL_ that scores **[97% compatibility with _Prettier_](https://console.algora.io/challenges/prettier)**, **saving CI and developer time**.
+    **Biome**은 _JavaScript_, _TypeScript_, _JSX_, _TSX_, _JSON_, _CSS_ 및 *GraphQL*을 위한 [**고속 포매터**](https://github.com/biomejs/biome/tree/main/benchmark#formatting)로, [***Prettier*와의 호환성 97%**](https://console.algora.io/challenges/prettier)를 달성하여 **CI 및 개발 시간을 절약할 수 있습니다**.
 
-    Biome can even **format malformed code** as you write it in [your favorite editor](/guides/integrate-in-editor/).
+    Biome은 [선호하는 에디터](/guides/integrate-in-editor/)로 작성할 때에도 **잘못된 코드를 포매팅**할 수 있습니다.
 
     <div class="linter format">
       <div class="inp">
-        <span>CODE</span>
+        <span>코드</span>
         <Inputf />
       </div>
       <div class="out">
-        <span>OUTPUT</span>
+        <span>결과</span>
         <Outputf />
       </div>
       <div class="perf-out">
-        <span>PERFORMANCE</span>
+        <span>성능</span>
         <div class="bench-comp">
           <div class="bench">
             <div>
@@ -77,16 +77,16 @@ import NumberOfRules from "@/components/generated/NumberOfRules.astro";
             </div>
           </div>
           <div class="perf-comp">
-            <div class="comp">~35x</div>
+            <div class="comp">~35배</div>
             <div class="comp-des">
-              Faster than Prettier when formatting 171,127 lines of code in 2,104 files with an Intel Core i7 1270P.
+              인텔 Core i7 1270P로 2,104개의 파일에 171,127줄의 코드를 포매팅할 때 Prettier보다 빠릅니다.
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    Try the Biome formatter on the [playground](/playground/) or directly on your project:
+    [플레이그라운드](/playground/) 또는 프로젝트에서 직접 Biome 포매터를 사용해 보세요.
 
     ```shell
     npm i -D --save-exact @biomejs/biome
