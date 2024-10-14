@@ -47,7 +47,7 @@ import NumberOfRules from "@/components/generated/NumberOfRules.astro";
 
 
 <div class="hero-code">
-    <h2 class="head">Prettier 같은 코드 포매팅, 하지만 시간을 절약하는</h2>
+    <h2 class="head">Prettier 같은 코드 포매팅, 다만 시간을 절약하는</h2>
 
     **Biome**은 _JavaScript_, _TypeScript_, _JSX_, _TSX_, _JSON_, _CSS_ 및 *GraphQL*을 위한 [**고속 포매터**](https://github.com/biomejs/biome/tree/main/benchmark#formatting)로, [***Prettier*와의 호환성 97%**](https://console.algora.io/challenges/prettier)를 달성하여 **CI 및 개발 시간을 절약할 수 있습니다**.
 
@@ -96,15 +96,15 @@ import NumberOfRules from "@/components/generated/NumberOfRules.astro";
 
 
 <div class="hero-code">
-    <h2 class="head">Fix problems, learn best practice</h2>
+    <h2 class="head">문제 해결, 모범 사례 학습</h2>
 
-    **Biome is a [performant linter](https://github.com/biomejs/biome/tree/main/benchmark#linting)** for _JavaScript_, _TypeScript_, _JSX_, _CSS_ and _GraphQL_ that features **[<NumberOfRules/> rules](/linter/rules/)** from ESLint, TypeScript ESLint, and [other sources](/linter/rules-sources/).
+    **Biome**은 _JavaScript_, _TypeScript_, _JSX_, _CSS_ 및 *GraphQL*을 위한 [**고성능 린터**](https://github.com/biomejs/biome/tree/main/benchmark#linting)로, ESLint, TypeScript ESLint, 및 [기타 소스](/linter/rules-sources/)에서 [**<NumberOfRules/>개의 규칙**](/linter/rules/)을 제공합니다.
 
-    **Biome outputs detailed and contextualized diagnostics** that help you to improve your code and become a better programmer!
+    **Biome**은 코드를 개선하고 더 나은 프로그래머가 되는 데 도움이 되는 **상세하고 문맥에 맞는 진단을 제공합니다!**
 
     <LinterExample />
 
-    Try the Biome linter on the [playground](/playground/) or directly on your project:
+    [플레이그라운드](/playground/) 또는 프로젝트에서 직접 Biome 린터를 사용해 보세요.
 
     ```shell
     npm i -D --save-exact @biomejs/biome
@@ -115,13 +115,13 @@ import NumberOfRules from "@/components/generated/NumberOfRules.astro";
 
 
 <div class="hero-code">
-    <h2 class="head">Everything all at once</h2>
+    <h2 class="head">모든 것을 한 번에</h2>
 
-    Not only can you format and lint your code separately, you can do it **all at once with a single command**!
+    코드를 개별적으로 포매팅하고 린팅할 수 있을 뿐만 아니라 **명령 한 번으로 모든 작업을 한 번에 수행할 수 있습니다!**
 
-    Every tool integrates seamlessly with others to create **a cohesive toolchain** for web projects.
+    모든 도구는 다른 도구와 원활하게 통합되어 웹 프로젝트를 위한 **일관된 도구 체인**을 만듭니다.
 
-    Run all tools with the `check` command:
+    `check` 명령으로 모든 도구를 실행하세요.
 
     ```shell
     npm i -D --save-exact @biomejs/biome
@@ -135,47 +135,42 @@ import NumberOfRules from "@/components/generated/NumberOfRules.astro";
 <div class="card-cnt">
 
 <CardGrid>
-    <Card title="Fast" icon="rocket">
-      Built with Rust and an innovative architecture inspired by rust-analyzer.
+    <Card title="빠른 속도" icon="rocket">
+      Rust와 rust-analyzer에서 영감을 받은 혁신적인 아키텍처로 구축되었습니다.
     </Card>
-    <Card title="Simple" icon="pencil">
-      Zero configuration needed to get started. Extensive options available for
-      when you need them.
+    <Card title="간단함" icon="pencil">
+      시작하기 위해 별도의 설정이 필요하지 않습니다. 필요할 때 사용할 수 있는 다양한 옵션을 사용할 수 있습니다.
     </Card>
-    <Card title="Scalable" icon="random">
-      Designed to handle codebases of any size. Focus on growing product instead
-      of your tools.
+    <Card title="확장성" icon="random">
+      모든 규모의 코드베이스를 처리할 수 있도록 설계되었습니다. 도구 대신 제품 성장에 집중하세요.
     </Card>
-    <Card title="Optimized" icon="setting">
-      With tight internal integration we are able to reuse previous work and any
-      improvement to one tool improves them all.
+    <Card title="최적화" icon="setting">
+      긴밀한 내부 통합을 통해 이전 작업을 재사용할 수 있으며 하나의 도구를 개선하면 모든 도구가 개선됩니다.
     </Card>
-    <Card title="Actionable & Informative" icon="information">
-      Avoid obscure error messages, when we tell you something is wrong, we tell
-      you exactly where the problem is and how to fix it.
+    <Card title="명확한 정보 제공" icon="information">
+      모호한 오류 메시지를 피하고, 문제가 발생했을 때 문제가 어디에 있으며 어떻게 해결해야 하는지 정확히 알려줍니다.
     </Card>
-    <Card title="Batteries Included" icon="add-document">
-      Out of the box support for all the language features you use today. First
-      class support for TypeScript and JSX.
+    <Card title="배터리 포함" icon="add-document">
+      사용하는 모든 언어의 기능을 즉시 지원합니다. TypeScript 및 JSX에 대한 일등석급 지원.
     </Card>
   </CardGrid>
 </div>
 <div class="installation-body">
   <div class="installation">
     <div class="installation-left">
-      <h2 class="head">Try Biome</h2>
+      <h2 class="head">Biome 시작하기</h2>
       <div class="installation-description">
-        Install Biome using your preferred package manager AND integrate it in your editor.
+        선호하는 패키지 관리자를 사용하여 Biome을 설치하고 에디터에 통합하세요.
       </div>
       <a class="installation-biome" href="/guides/getting-started/#installation">
-        Install with package manager
+        패키지 매니저로 설치하기
         <Image src={arrow} alt="arrow" />
       </a>
       <a
         href="/guides/integrate-in-editor/"
         class="installation-extension"
       >
-        Integrate Biome in your editor
+        편집기에 Biome 통합하기
         <Image src={arrow} alt="arrow" />
       </a>
     </div>
@@ -187,10 +182,10 @@ import NumberOfRules from "@/components/generated/NumberOfRules.astro";
 
 <div class="community">
   <div class="community-grid"></div>
-  <h2 class="head">Community</h2>
+  <h2 class="head">커뮤니티</h2>
   <div class="community-connect">
     <div class="community-description">
-      Powered by our open-source contributors
+      오픈 소스 기여자들에 의해 유지됩니다
     </div>
     <div class="community-links">
       <a href="https://biomejs.dev/chat" class="discord">
@@ -216,6 +211,6 @@ import NumberOfRules from "@/components/generated/NumberOfRules.astro";
   </div>
 </div>
 
-<Sponsors title="Sponsors" />
+<Sponsors title="스폰서" />
 
 <Netlify />
