@@ -89,7 +89,7 @@ export default defineConfig({
 							link: "/guides/configure-biome",
 							translations: {
 								ja: "Biome の設定",
-								ko: "Biome 설정",
+								ko: "Biome 구성 설정",
 								"zh-CN": "配置生物群落",
 								"pt-BR": "Configurar Bioma",
 							},
@@ -297,7 +297,7 @@ export default defineConfig({
 							link: "/reference/configuration",
 							translations: {
 								ja: "設定",
-								ko: "설정",
+								ko: "구성 설정",
 								"zh-CN": "配置",
 								"pt-BR": "Configuração",
 							},
