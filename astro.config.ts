@@ -48,26 +48,28 @@ export default defineConfig({
 				{
 					label: "Blog",
 					link: "../blog",
-					translations: { ja: "ブログ", "zh-CN": "博客" },
+					translations: { ja: "ブログ", ko: "블로그", "zh-CN": "博客" },
 				},
 				{
 					label: "Playground",
 					link: "../playground",
 					translations: {
 						ja: "プレイグラウンド",
+						ko: "플레이그라운드",
 						"zh-CN": "演练场",
 						"pt-BR": "Ambiente de testes",
 					},
 				},
 				{
 					label: "Guides",
-					translations: { ja: "ガイド", "zh-CN": "指南", "pt-BR": "Guias" },
+					translations: { ja: "ガイド", ko: "가이드", "zh-CN": "指南", "pt-BR": "Guias" },
 					items: [
 						{
 							label: "Getting Started",
 							link: "/guides/getting-started",
 							translations: {
 								ja: "はじめる",
+								ko: "시작하기",
 								"zh-CN": "入门",
 								"pt-BR": "Primeiros passos",
 							},
@@ -77,6 +79,7 @@ export default defineConfig({
 							link: "/guides/manual-installation",
 							translations: {
 								ja: "手動インストール",
+								ko: "수동 설치",
 								"zh-CN": "手动安装",
 								"pt-BR": "Instalação manual",
 							},
@@ -86,6 +89,7 @@ export default defineConfig({
 							link: "/guides/configure-biome",
 							translations: {
 								ja: "Biome の設定",
+								ko: "Biome 설정",
 								"zh-CN": "配置生物群落",
 								"pt-BR": "Configurar Bioma",
 							},
@@ -95,6 +99,7 @@ export default defineConfig({
 							link: "/guides/big-projects",
 							translations: {
 								ja: "大きなプロジェクトでのBiomeの使用方法",
+								ko: "대규모 프로젝트에서 Biome 사용",
 								"zh-CN": "大型项目中使用 Biome",
 								"pt-BR": "Usando o Biome em projetos grandes",
 							},
@@ -103,6 +108,7 @@ export default defineConfig({
 							label: "Biome in your IDE",
 							translations: {
 								ja: "Biome をあなたのエディタに導入する",
+								ko: "에디터에서 Biome 사용",
 								"zh-CN": "编辑器中使用 Biome",
 								"pt-BR": "Biome no seu editor",
 							},
@@ -110,14 +116,17 @@ export default defineConfig({
 								{
 									label: "First-party extensions",
 									link: "/guides/editors/first-party-extensions",
+									translations: { ko: "퍼스트파티 확장" },
 								},
 								{
 									label: "Third-party extensions",
 									link: "/guides/editors/third-party-extensions",
+									translations: { ko: "서드파티 확장" },
 								},
 								{
 									label: "Integrate Biome in an editor extension",
 									link: "/guides/editors/create-a-extension",
+									translations: { ko: "에디터 확장에 Biome 통합" },
 								},
 							],
 						},
@@ -126,6 +135,7 @@ export default defineConfig({
 							link: "/guides/integrate-in-vcs",
 							translations: {
 								ja: "Biome をあなたの VCS と統合する",
+								ko: "Biome을 VCS와 통합",
 								"zh-CN": "与版本控制系统集成",
 								"pt-BR": "Integrando o Biome com o seu VCS",
 							},
@@ -135,6 +145,7 @@ export default defineConfig({
 							link: "/guides/migrate-eslint-prettier",
 							translations: {
 								ja: "ESLintとPrettierからの移行",
+								ko: "ESLint 및 Prettier에서 마이그레이션",
 							},
 						},
 					],
@@ -143,6 +154,7 @@ export default defineConfig({
 					label: "Tools",
 					translations: {
 						ja: "ツール",
+						ko: "도구",
 						"zh-CN": "工具",
 						"pt-BR": "Ferramentas",
 					},
@@ -155,6 +167,7 @@ export default defineConfig({
 									link: "/analyzer",
 									translations: {
 										ja: "イントロダクション",
+										ko: "소개",
 										"zh-CN": "介绍",
 										"pt-BR": "Introdução",
 									},
@@ -164,6 +177,7 @@ export default defineConfig({
 									link: "/analyzer/import-sorting",
 									translations: {
 										ja: "Import文のソート",
+										ko: "Import 정렬",
 										"zh-CN": "导入排序",
 										"pt-BR": "Ordenação de importações",
 									},
@@ -171,6 +185,7 @@ export default defineConfig({
 							],
 							translations: {
 								ja: "Analyzer",
+								ko: "애널라이저",
 								"zh-CN": "分析器",
 								"pt-BR": "Analisador",
 							},
@@ -183,6 +198,7 @@ export default defineConfig({
 									link: "/formatter",
 									translations: {
 										ja: "イントロダクション",
+										ko: "소개",
 										"zh-CN": "介绍",
 										"pt-BR": "Introdução",
 									},
@@ -192,6 +208,7 @@ export default defineConfig({
 									link: "/formatter/differences-with-prettier",
 									translations: {
 										ja: "Prettier との違い",
+										ko: "Prettier와 다른 점",
 										"zh-CN": "与 Prettier 的区别",
 										"pt-BR": "Diferenças em relação ao Prettier",
 									},
@@ -201,12 +218,14 @@ export default defineConfig({
 									link: "/formatter/option-philosophy",
 									translations: {
 										ja: "Formatterオプションに対する考え方",
+										ko: "포매터 옵션 철학",
 										"zh-CN": "格式化配置理念",
 										"pt-BR": "Princípios de configuração",
 									},
 								},
 							],
 							translations: {
+								ko: "포매터",
 								"zh-CN": "格式化程序",
 								"pt-BR": "Formatador",
 							},
@@ -219,6 +238,7 @@ export default defineConfig({
 									link: "/linter",
 									translations: {
 										ja: "イントロダクション",
+										ko: "소개",
 										"zh-CN": "介绍",
 										"pt-BR": "Introdução",
 									},
@@ -228,6 +248,7 @@ export default defineConfig({
 									link: "/linter/rules",
 									translations: {
 										ja: "ルール",
+										ko: "규칙",
 										"zh-CN": "规则",
 										"pt-BR": "Regras",
 									},
@@ -235,8 +256,10 @@ export default defineConfig({
 								{
 									label: "Rules sources",
 									link: "/linter/rules-sources",
+									translations: { ko: "규칙 소스" },
 								},
 							],
+							translations: { ko: "린터" },
 						},
 					],
 				},
@@ -244,6 +267,7 @@ export default defineConfig({
 					label: "Reference",
 					translations: {
 						ja: "リファレンス",
+						ko: "레퍼런스",
 						"zh-CN": "参考",
 						"pt-BR": "Referências",
 					},
@@ -256,20 +280,24 @@ export default defineConfig({
 							label: "Diagnostics",
 							link: "/reference/diagnostics",
 							badge: "new",
+							translations: { ko: "진단" },
 						},
 						{
 							label: "Environment variables",
 							link: "/reference/environment-variables",
+							translations: { ko: "환경 변수" },
 						},
 						{
 							label: "Reporters",
 							link: "/reference/reporters",
+							translations: { ko: "리포터" },
 						},
 						{
 							label: "Configuration",
 							link: "/reference/configuration",
 							translations: {
 								ja: "設定",
+								ko: "설정",
 								"zh-CN": "配置",
 								"pt-BR": "Configuração",
 							},
@@ -279,6 +307,7 @@ export default defineConfig({
 							link: "/reference/vscode",
 							translations: {
 								ja: "VSCode拡張機能",
+								ko: "VSCode 확장",
 								"zh-CN": "VSCode 扩展",
 								"pt-BR": "Extensão do VSCode",
 							},
@@ -289,6 +318,7 @@ export default defineConfig({
 							badge: "new",
 							translations: {
 								ja: "Zed拡張機能",
+								ko: "Zed 확장",
 								"zh-CN": "Zed 扩展",
 								"pt-BR": "Extensão do Zed",
 							},
@@ -302,13 +332,14 @@ export default defineConfig({
 				},
 				{
 					label: "Recipes",
-					translations: { ja: "レシピ", "zh-CN": "实例", "pt-BR": "Receitas" },
+					translations: { ja: "レシピ", ko: "레서피", "zh-CN": "实例", "pt-BR": "Receitas" },
 					items: [
 						{
 							label: "Continuous Integration",
 							link: "/recipes/continuous-integration",
 							translations: {
 								ja: "継続的インテグレーション",
+								ko: "지속적 통합",
 								"zh-CN": "持续集成",
 								"pt-BR": "Integração Contínua",
 							},
@@ -326,6 +357,7 @@ export default defineConfig({
 							link: "/recipes/badges",
 							translations: {
 								ja: "ソーシャルバッジ",
+								ko: "소셜 배지",
 							},
 						},
 					],
@@ -334,6 +366,7 @@ export default defineConfig({
 					label: "Internals",
 					translations: {
 						ja: "内部原理",
+						ko: "내부 원리",
 						"zh-CN": "内部原理",
 						"pt-BR": "Aspectos Internos",
 					},
@@ -343,6 +376,7 @@ export default defineConfig({
 							link: "/internals/philosophy",
 							translations: {
 								ja: "理念",
+								ko: "철학",
 								"zh-CN": "理念",
 								"pt-BR": "Filosofia",
 							},
@@ -352,6 +386,7 @@ export default defineConfig({
 							link: "/internals/language-support",
 							translations: {
 								ja: "言語サポート",
+								ko: "언어 지원",
 								"zh-CN": "语言支持",
 								"pt-BR": "Suporte de linguagens",
 							},
@@ -361,6 +396,7 @@ export default defineConfig({
 							link: "/internals/architecture",
 							translations: {
 								ja: "アーキテクチャ",
+								ko: "아키텍처",
 								"zh-CN": "架构",
 								"pt-BR": "Arquitetura",
 							},
@@ -370,6 +406,7 @@ export default defineConfig({
 							link: "/internals/credits",
 							translations: {
 								ja: "クレジット",
+								ko: "크레딧",
 								"zh-CN": "鸣谢",
 								"pt-BR": "Créditos",
 							},
@@ -379,6 +416,7 @@ export default defineConfig({
 							link: "/internals/versioning",
 							translations: {
 								ja: "バージョニング",
+								ko: "버전 관리",
 								"zh-CN": "版本控制",
 								"pt-BR": "Versionamento",
 							},
@@ -387,6 +425,7 @@ export default defineConfig({
 							label: "Changelog",
 							link: "/internals/changelog",
 							translations: {
+								ko: "변경 내역",
 								"zh-CN": "更新日志",
 								"pt-BR": "Alterações",
 							},

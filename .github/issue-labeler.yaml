@@ -4,8 +4,10 @@
 "Lang-Chinese":
   - "https://biomejs.dev/zh-cn/"
 "Lang-English":
-  - "https://biomejs.dev/(?!(zh-cn|ja|pt-br))"
+  - "https://biomejs.dev/(?!(zh-cn|ja|ko|pt-br))"
 "Lang-Japanese":
   - "https://biomejs.dev/ja/"
+"Lang-Korean":
+  - "https://biomejs.dev/ko/"
 "Lang-Portuguese":
   - "https://biomejs.dev/pt-br/"
