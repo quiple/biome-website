@@ -307,7 +307,7 @@ export default defineConfig({
 							link: "/reference/vscode",
 							translations: {
 								ja: "VSCode拡張機能",
-								ko: "VSCode 확장",
+								ko: "VS Code 확장",
 								"zh-CN": "VSCode 扩展",
 								"pt-BR": "Extensão do VSCode",
 							},
