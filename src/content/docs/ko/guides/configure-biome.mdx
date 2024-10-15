@@ -5,7 +5,7 @@ description: Biome 구성이 어떻게 작동하는지 알아보세요.
 
 import {FileTree} from '@astrojs/starlight/components';
 
-이 가이드는 Biome을 어떻게 구성 설정하는지 이해하는 데 도움이 됩니다.
+이 가이드는 Biome을 어떻게 구성 설정하는지 이해하는 데 도움을 줍니다.
 이곳에서는 Biome 구성 파일의 구조와 Biome이 구성을 확인하는 방법에 대해 설명합니다.
 이미 구성 설정에 익숙하다면 사용 가능한 모든 옵션이 자세히 설명되어 있는 [구성 설정 레퍼런스](/ko/reference/configuration/)를 살펴보는 것이 좋습니다.
 
@@ -132,7 +132,7 @@ Biome은 표준 JSON 구문 분석기를 사용하여 .json 파일을 읽습니�
 Biome은 `node_modules/` 디렉터리에서 구성 파일을 확인할 수 있습니다.
 따라서 패키지에서 구성 파일을 내보내고 여러 프로젝트에서 가져올 수 있습니다.
 
-이를 위해 가장 먼저 해야 할 일은 특정 방식으로 “공유” Biome 구성을 설정하는 것입니다.
+이를 위해 가장 먼저 해야 할 일은 특정 방식으로 ‘공유’ Biome 구성을 설정하는 것입니다.
 예를 들어 `@org/shared-configs/biome` 지정자를 사용하는 `@org/shared-configs`라는 패키지의 구성을 공유하고자 한다고 가정해 보겠습니다.
 이 패키지의 `package.json`에 `exports` 항목을 만들어야 합니다.
 
@@ -168,7 +168,7 @@ Biome은 작업 디렉터리에서 `@org/shared-configs/` 라이브러리를 **�
 처리 알고리즘에 대한 자세한 내용은 [Node.js 문서](https://nodejs.org/api/esm.html#resolution-and-loading-algorithm)를 참조하세요.
 
 
-## Ignore 파일
+## 파일 무시
 
 Biome에서 처리할 파일과 디렉터리를 제어하는 첫 번째 방법은 CLI에서 해당 파일과 디렉터리를 나열하는 것입니다.
 다음 명령에서는 `file1.js`와 `src` 디렉터리에 있는 모든 파일만 포매팅합니다.
@@ -179,30 +179,29 @@ biome format file1.js src/
 ```
 
 :::caution
-Glob patterns used on the command line are not interpreted by Biome.
-They are expanded by your shell.
-Some shells don't support the recursive glob `**`.
+명령줄에 사용된 글로브 패턴은 Biome에서 해석되지 않으며 셸에 의해 확장됩니다.
+일부 셸은 재귀적 글로브 `**`를 지원하지 않습니다.
 :::
 
-The Biome configuration file can be used to refine which files are processed.
-You can explicitly list the files to be processed using `include` and the files not to be processed using `ignore`.
-`include` and `ignore` accepts globs patterns such as `src/**/*.js`.
-See the [related section](#glob-syntax-explained) for which glob syntaxes are supported.
-`include` is always applied first before applying `ignore`.
-This allows you to include some files and to ignore some of the file you included.
+Biome 구성 파일을 사용하여 처리할 파일을 구체화할 수 있습니다.
+`include`를 사용하여 처리할 파일을, `ignore`를 사용하여 처리하지 않을 파일을 명시적으로 나열할 수 있습니다.
+`include`와 `ignore`는 `src/**/*.js`와 같은 글로브 패턴을 허용합니다.
+지원되는 글로브 구문은 [관련 섹션](#글로브-문법-설명)을 참조하세요.
+`include`는 항상 `ignore`보다 먼저 적용됩니다.
+이를 통해 일부 파일을 포함시키고 포함시킨 파일 중 일부를 무시할 수 있습니다.
 
 :::note
-`include` and `ignore` have a slightly different semantics.
-`include` doesn't prevent Biome of traversing a folder.
-This means that if you want to prevent Biome from traversing a folder, you have to add the folder to `ignore`.
+`include`와 `ignore`는 약간 방식이 다릅니다.
+`include`는 Biome이 폴더를 탐색하는 것을 방지하지 않습니다.
+즉, Biome이 폴더를 탐색하지 못하도록 하려면 폴더를 `ignore`에 추가해야 합니다.
 :::
 
-Biome provides global `files.include` and `files.ignore` fields that apply to all tools.
-You can also include and ignore files at tool level using `<tool>.include` and `<tool>.ignore`.
-Note that they don't override the global `files.include` and `files.ignore`.
-`files.include` and `files.ignore` are applied first before a tool's `include` and `ignore`.
+Biome은 모든 도구에 적용되는 전역 `files.include` 및 `files.ignore` 필드를 제공합니다.
+또한 `<tool>.include` 및 `<tool>.ignore`를 사용하여 도구 수준에서 파일을 포함하거나 무시할 수 있습니다.
+이 필드들은 전역 `files.include` 및 `files.ignore`를 재정의하지 않습니다.
+`files.include` 및 `files.ignore`는 도구의 `include` 및 `ignore`보다 먼저 적용됩니다.
 
-Let's take the following configuration:
+다음 구성을 예로 들어 보겠습니다.
 
 ```json title="biome.json"
 {
@@ -216,29 +215,28 @@ Let's take the following configuration:
 }
 ```
 
-And run the following command:
+그리고 다음 명령을 실행합니다.
 
 ```shell
 biome format test/
 ```
 
-The command will format the files that end with the `.js` extension and doesn't end with the `.min.js` extension from the `test` directory.
-The files in `src` are not formatted because the directory is not listed in the CLI.
+이 명령은 `test` 디렉터리에서 확장자가 `.js`로 끝나고 `.min.js`로 끝나지 않는 파일을 포매팅합니다.
+`src` 내 파일은 CLI에 나열하지 않았기 때문에 포매팅되지 않습니다.
 
-If we run the following command, no files are linted because the `test` directory is explicitly ignored for the linter.
+다음 명령을 실행하면 `test` 디렉터리가 린터에 대해 명시적으로 무시되므로 어떤 파일도 린팅되지 않습니다.
 
 ```shell
 biome lint test/
 ```
 
-Biome resolves the globs relatively from the working directory.
-The working directory is the directory where you usually run a CLI command.
-This means that you have to place **particular attention** when the configuration file is placed in
-a different directory from where you execute your command.
-In the case of an editor (LSP) the working directory is the root directory of your project.
+Biome은 작업 디렉터리에서 상대적으로 글로브를 확인합니다.
+작업 디렉터리는 일반적으로 CLI 명령을 실행하는 디렉터리입니다.
+따라서 구성 파일이 명령을 실행하는 위치와 다른 디렉터리에 있는 경우 **특히 주의**해야 합니다.
+에디터(LSP)의 경우 작업 디렉터리는 프로젝트의 루트 디렉터리입니다.
 
-Let's take a project that contains two directories `backend/` and `frontend/`, and the Biome configuration file that we introduced earlier.
-Inside the `frontend/` directory, a `package.json` specifies a `format` script that runs the Biome formatter.
+두 디렉터리 `backend/`와 `frontend/`, 그리고 앞서 소개한 Biome 구성 파일이 포함된 프로젝트를 예로 들어 보겠습니다.
+`frontend/` 디렉터리 안에 `package.json`은 Biome 포매터를 실행하는 `format` 스크립트를 지정합니다.
 
 <FileTree>
 - backend
@@ -261,10 +259,9 @@ Inside the `frontend/` directory, a `package.json` specifies a `format` script t
 }
 ```
 
-When you run the script `format` from `frontend/package.json`,
-the working directory resolved by that script will be `frontend/`.
-The globs `src/**/*.js` and `test/**/*.js` will have as "base" directory `frontend/`.
-Thus, only the files from `frontend/src/` and `frontend/test/` will be formatted.
+`frontend/package.json`에서 스크립트 `format`을 실행하면 해당 스크립트에서 처리되는 작업 디렉터리는 `frontend/`가 됩니다.
+글로브 `src/**/*.js`와 `test/**/*.js`의 ‘기본’ 디렉터리는 `frontend/`가 됩니다.
+따라서 `frontend/src/`와 `frontend/test/`의 파일만 포매팅됩니다.
 
 ```json title="biome.json"
 {
@@ -279,15 +276,15 @@ Thus, only the files from `frontend/src/` and `frontend/test/` will be formatted
 ```
 
 :::caution
-`ignore` and `include` inside `overrides` have a **different** semantics:
-- for `ignore`: if a file matches the globs, **_don't_ apply** the configuration inside this override, and keep apply the next overrides;
-- for `include`: if a file matches the globs, **apply** the configuration inside this override, and keep apply the next overrides;
+`overrides` 내부의 `ignore`와 `include`는 약간 방식이 다릅니다.
+- `ignore`: 파일이 글로브와 일치하면 이 재정의 내부의 구성을 적용하지 않고 다음 재정의를 계속 적용합니다.
+- `include`: 파일이 글로브와 일치하면 이 재정의 내부의 구성을 적용하고 다음 재정의를 계속 적용합니다.
 :::
 
 :::note
-By default, Biome always ignores some files that are said to be **protected files**.
-This means that no diagnostics will be ever emitted by Biome for those files.
-At the moment, the following files are protected:
+기본적으로 Biome은 **보호된 파일**로 다뤄지는 일부 파일은 항상 무시합니다.
+즉, 이러한 파일에 대해서는 Biome에서 진단하지 않습니다.
+현재 다음 파일이 보호되고 있습니다.
 
 - `composer.lock`
 - `npm-shrinkwrap.json`
@@ -296,16 +293,16 @@ At the moment, the following files are protected:
 :::
 
 :::note
-You can also [ignore files ignored by your VCS](/guides/integrate-in-vcs#use-the-ignore-file).
+[VCS에서 무시한 파일을 무시](/ko/guides/integrate-in-vcs#파일-무시-사용)할 수도 있습니다.
 :::
 
 
-## Well-known 파일
+## 잘 알려진 파일
 
-Here are some well-known files that we specifically treat based on their file names, rather than their extensions.
-Currently, the well-known files are JSON-like files only, but we may broaden the list to include other types when we support new parsers.
+다음은 확장자가 아니라 파일 이름에 따라 특별히 처리되는 잘 알려진 몇 가지 파일입니다.
+현재 잘 알려진 파일은 JSON과 닮은 파일만 있지만, 새로운 구문 분석기를 지원하게 되면 다른 유형까지 포함하도록 목록을 확장할 수 있습니다.
 
-The following files are parsed as `JSON` files with both the options `json.parser.allowComments` and `json.parser.allowTrailingCommas` set to `false`.
+다음 파일은 `json.parser.allowComments` 및 `json.parser.allowTrailingCommas` 옵션이 모두 `false`로 설정된 `JSON` 파일로 구문 분석됩니다.
 
 - `.all-contributorsrc`
 - `.arcconfig`
@@ -322,7 +319,8 @@ The following files are parsed as `JSON` files with both the options `json.parse
 - `.watchmanconfig`
 - `mcmod.info`
 
-The following files are parsed as `JSON` files with the options `json.parser.allowComments` set to `true` but `json.parser.allowTrailingCommas` set to `false`. This is because the tools consuming these files can only strip comments.
+다음 파일은 `json.parser.allowComments` 옵션이 `true`로 설정된 `JSON` 파일로 구문 분석되지만 `json.parser.allowTrailingCommas` 옵션은 `false`로 설정되어 있습니다.
+이는 이러한 파일을 사용하는 도구가 주석만 제거할 수 있기 때문입니다.
 
 - `.ember-cli`
 - `.eslintrc.json`
@@ -331,7 +329,8 @@ The following files are parsed as `JSON` files with the options `json.parser.all
 - `tslint.json`
 - `turbo.json`
 
-The following files are parsed as `JSON` files with the options `json.parser.allowComments` and `json.parser.allowTrailingCommas` set to `true`. This is because the tools consuming these files are designed to accommodate such settings.
+다음 파일은 `json.parser.allowComments` 및 `json.parser.allowTrailingCommas` 옵션이 `true`로 설정된 `JSON` 파일로 구문 분석됩니다.
+이는 이러한 파일을 사용하는 도구가 이러한 설정을 수용하도록 설계되었기 때문입니다.
 
 - `.babelrc`
 - `.babelrc.json`
@@ -353,34 +352,30 @@ The following files are parsed as `JSON` files with the options `json.parser.all
 - `typescript.json`
 
 
-## Glob syntax explained
+## 글로브 문법 설명
 
-A glob pattern specifies a set of filenames.
-Biome supports the following globs:
+글로브 패턴은 파일 이름 집합을 지정합니다.
+Biome은 다음과 같은 글로브를 지원합니다.
 
-- `*` matches zero or more characters. It cannot match the path separator `/`.
-- `**` recursively matches directories and files.
-  This sequence **must** form a single path component,
-  so both `**a` and `b**` are invalid and will result in an error.
-  A sequence of more than two consecutive `*` characters is also invalid.
-- `[...]` matches any character inside the brackets.
-  Ranges of characters can also be specified, as ordered by Unicode, so e.g.
-  `[0-9]` specifies any character between 0 and 9 inclusive.
-- `[!...]` is the negation of `[...]`, i.e. it matches any characters **not** in the brackets.
+- `*`는 0개 이상의 문자와 일치합니다. 경로 구분 기호 `/`와는 일치하지 않습니다.
+- `**`는 디렉터리, 파일과 재귀적으로 일치합니다.
+  이 시퀀스는 **반드시** 단일 경로 구성 요소를 형성해야 하므로 `**a`와 `b**`는 모두 유효하지 않으며 오류가 발생합니다.
+  두 개 이상의 연속 `*` 문자로 이루어진 시퀀스도 유효하지 않습니다.
+- `[...]`는 대괄호 안의 모든 문자와 일치합니다.
+  Unicode 순서에 따라 문자 범위도 지정할 수 있으며 예를 들어 `[0-9]`는 0에서 9 사이의 모든 문자를 지정합니다.
+- `[!...]`는 `[...]`의 부정이며 괄호 안에 **없는** 모든 문자와 일치합니다.
 
-Some examples:
+다음은 몇 가지 예시입니다.
 
-- `dist/**` matches the dist directory and all files in this directory.
-- `**/test/**` matches all files under any directory named `test`, regardless of where they are. E.g. `dist/test`, `src/test`.
-- `**/*.js` matches all files ending with the extension `.js` in all directories.
+- `dist/**`는 `dist` 디렉터리와 이 디렉터리에 있는 모든 파일과 일치합니다.
+- `**/test/**`는 파일 위치에 관계없이 `test`라는 이름의 디렉터리에 있는 모든 파일과 일치합니다. 예: `dist/test`, `src/test`.
+- `**/*.js`는 모든 디렉터리에 있는 확장자가 `.js`로 끝나는 모든 파일과 일치합니다.
 
-Biome uses a glob library that treats all globs as having a `**/` prefix.
-This means that `src/**/*.js` and `**/src/**/*.js` are treated as identical.
-They match both `src/file.js` and `test/src/file.js`.
+Biome은 모든 글로브에 `**/` 접두사가 있는 것으로 취급하는 글로브 라이브러리를 사용합니다.
+즉, `src/**/*.js`와 `**/src/**/*.js`는 동일한 것으로 취급되며 두 패턴 모두 `src/file.js`, `test/src/file.js`와 일치합니다.
 
 :::caution
-These patterns can be used in a Biome configuration file.
-Glob patterns used on the command line are not interpreted by Biome.
-They are expanded by your shell.
-Some shells don't support the recursive glob `**`
+이러한 패턴은 Biome 구성 파일에서 사용할 수 있습니다.
+명령줄에 사용된 글로브 패턴은 Biome에서 해석되지 않으며 셸에 의해 확장됩니다.
+일부 셸은 재귀적 글로브 `**`를 지원하지 않습니다.
 :::
