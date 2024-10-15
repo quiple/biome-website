@@ -30,6 +30,7 @@ Biome을 설치하려면 `package.json` 파일이 포함된 디렉터리에서 �
 자세한 내용은 [버전 관리](/ko/internals/versioning/) 페이지를 참조하세요.
 :::
 
+
 ## 구성 설정
 
 각 프로젝트에 대해 `biome.json` 또는 `biome.jsonc` 구성 파일을 만드는 것이 좋습니다.
@@ -51,6 +52,7 @@ Biome의 기본값에 만족하는 경우 구성 파일을 만들 필요가 없�
 
 포매팅은 **기본적으로** 활성화되어 있지만 `formatter.enabled: false`를 사용하여 명시적으로 [비활성화](/ko/reference/configuration/#formatterenabled)할 수 있습니다.
 
+
 ## 사용
 
 Biome CLI에는 다양한 명령과 옵션이 제공되므로 필요한 대로 사용할 수 있습니다.
@@ -70,16 +72,19 @@ Biome CLI에는 다양한 명령과 옵션이 제공되므로 필요한 대로 �
 `check` 명령은 여러 도구를 한꺼번에 실행합니다.
 포매팅하고, 린팅하고, import 서식을 지정합니다.
 
+
 ## 에디터 플러그인 설치
 
 Biome을 최대한 활용하려면 에디터 플러그인을 설치하는 것이 좋습니다.
 Biome을 지원하는 에디터를 확인하려면 [에디터 페이지](/ko/guides/integrate-in-editor)를 확인하세요.
+
 
 ## CI 설정
 
 Node.js를 사용하는 경우 CI에서 Biome을 실행하는 권장 방법은 [선호하는 패키지 관리자](/ko/guides/getting-started#installation)를 사용하는 것입니다.
 이렇게 하면 CI 파이프라인에서 에디터 내부 또는 로컬 CLI 명령을 실행할 때와 동일한 버전의 Biome을 사용할 수 있습니다.
 아니면 전용 [CI 동작](/ko/recipes/continuous-integration)을 사용할 수도 있습니다.
+
 
 ## 다음 단계
 
